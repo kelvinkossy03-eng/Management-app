@@ -1,24 +1,52 @@
-# Business Management App
+# BusinessOS Nigeria — MVP starter
 
-A React + Vite MVP for small-business management in Nigeria.
+A responsive React + Vite prototype for a configurable Nigerian small-business management app.
 
-## Included features
-- Dashboard overview
-- Product and inventory management
-- Record sales and automatically deduct stock
-- Customer list
-- Expense tracking
-- Export sales to CSV
-- Responsive layout
+## Included
+- Responsive sidebar/dashboard layout
+- Business profile setup that adapts to restaurant/bar, retail, supermarket, pharmacy, salon and other business types
+- Sample performance metrics and illustrative chart
+- Inventory/product CRUD (add and delete)
+- Record sales with stock deduction and stock validation
+- Record expenses
+- Customer directory
+- CSV export of sales
+- Rule-based business tips (not an AI integration)
+- Local browser persistence with `localStorage`
+- Settings and reset of sample data
 
-## Run locally
-1. Install Node.js (LTS).
-2. Clone this repository.
-3. Open the project folder in a terminal and run `npm install`.
-4. Run `npm run dev`.
-5. Open the local URL shown by Vite.
+## Run locally (Windows)
+1. Install Node.js LTS from https://nodejs.org if it is not installed.
+2. Extract this ZIP.
+3. Open the extracted `businessos-nigeria` folder in VS Code.
+4. Open Terminal → New Terminal.
+5. Run:
+   ```bash
+   npm install
+   npm run dev
+   ```
+6. Open the local URL Vite prints (usually `http://localhost:5173`).
 
-## Current limitations
-This is an MVP. Data is stored in the browser's local storage, so it is not yet a secure multi-user cloud system. Do not use it for real financial records until authentication, server-side storage, backups, authorization, and testing are added.
+## Important MVP limitations
+This is a frontend demo, not yet production SaaS. Records are stored only in the current browser. It has no real login, backend API, cloud database, backups, multi-tenant isolation, real AI integration, supplier workflow, payroll, accounting/tax engine, or payment processing. Do not use it for sensitive or business-critical live records.
 
-The complete starter project archive will be included in this repository.
+## Recommended production path
+- Frontend: React + Vite (or Next.js if SEO/server-rendering becomes important)
+- Backend: FastAPI on Railway
+- Database: PostgreSQL
+- Authentication: secure server-side sessions or a reputable auth provider
+- Tenant isolation: every business-owned record must be scoped to a business/tenant ID and authorized server-side
+- Security: validation, audit logs, backups, rate limits, least-privilege staff roles, secure secrets, and automated tests
+- Integrations: add AI, payment, invoicing and messaging providers only through server-side endpoints
+
+## GitHub
+Create an empty repository named `businessos-nigeria`, then push the project:
+```bash
+git init
+git add .
+git commit -m "Initial BusinessOS Nigeria MVP"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/businessos-nigeria.git
+git push -u origin main
+```
+Replace `YOUR-USERNAME` with your GitHub username. Do not commit API keys or `.env` files.
